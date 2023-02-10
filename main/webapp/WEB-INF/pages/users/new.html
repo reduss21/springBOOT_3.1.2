@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание нового пользователя</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+</head>
+<body>
+<div>
+    <form th:method="POST" th:action="@{/users}" th:object="${user}">
+        <h1>Новый пользователь</h1>
+        <label for="name">Имя</label> <br>
+        <input type="text" th:field="*{name}" id="name" placeholder="name"><br>
+        <label for="surname">Фамилия</label> <br>
+        <input type="text" th:field="*{surname}" id="surname" placeholder="surname"><br>
+        <label for="age">возвраст</label> <br>
+        <input type="text" th:field="*{age}" id="age"><br>
+        <label for="num">номер телефона</label> <br>
+        <input type="text" th:field="*{number}" id="num"><br>
+        <label for="email">Почта</label> <br>
+        <input type="text" th:field="*{email}" id="email" placeholder="e-mail"> <br>
+        <br>
+        <input type="submit" value="Сохранить"/><br>
+    </form>
+</div>
+</body>
+</html>
